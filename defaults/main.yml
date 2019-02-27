@@ -1,0 +1,6 @@
+---
+# zerodowntime.entropy_haveged/defaults/main.yml
+
+# entropy_haveged__package_state: string
+# installed packages state
+entropy_haveged__package_state: present

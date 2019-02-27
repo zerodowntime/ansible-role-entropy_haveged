@@ -1,0 +1,33 @@
+---
+# zerodowntime.entropy_haveged/tasks/main.yml
+
+- name: entropy_haveged | install packages
+  become: true
+  package:
+    name: "{{ entropy_haveged__package_name }}"
+    state: "{{ entropy_haveged__package_state }}"
+  tags:
+    - entropy_haveged
+    - entropy_haveged::install
+
+
+- name: entropy_haveged | ensure that service is enabled
+  become: true
+  service:
+    name: "{{ entropy_haveged__service_name }}"
+    enabled: true
+  tags:
+    - entropy_haveged
+    - entropy_haveged::enabled
+
+
+- name: entropy_haveged | ensure that service is running
+  become: true
+  service:
+    name: "{{ entropy_haveged__service_name }}"
+    state: started
+  tags:
+    - entropy_haveged
+    - entropy_haveged:running
+
+# cat /proc/sys/kernel/random/entropy_avail

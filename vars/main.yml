@@ -1,0 +1,10 @@
+---
+# zerodowntime.entropy_haveged/vars/main.yml
+
+# entropy_haveged__package_name: string
+# installed package name
+entropy_haveged__package_name: haveged
+
+# entropy_haveged__service_name: string
+# service name
+entropy_haveged__service_name: haveged
